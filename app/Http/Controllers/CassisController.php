@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cassis;
 use Illuminate\Http\Request;
+use App\Models\Cassis;
 
 class CassisController extends Controller
 {
