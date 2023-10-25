@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class CreateDB extends Command
 {
+<<<<<<< HEAD
    /**
+=======
+    /**
+>>>>>>> 5d18aa7cbd1a38da7f3e877db2d6bfb5026129f9
      * The name and signature of the console command.
      *
      * @var string
@@ -47,6 +51,7 @@ class CreateDB extends Command
         $query = "CREATE DATABASE IF NOT EXISTS $schemaName CHARACTER SET $charset COLLATE $collation;";
 
         try {
+<<<<<<< HEAD
             DB::statement($query);
             echo "$schemaName database has been created.";
         }
@@ -58,3 +63,17 @@ class CreateDB extends Command
     }
 
 }
+=======
+			DB::statement($query);
+			echo "$schemaName adatbázis létrehozva";
+		} 
+		catch(Exception $e){
+			$e->getMessage();
+		}
+		
+
+        config(["database.connections.mysql.database" => $schemaName]);
+
+    }
+}
+>>>>>>> 5d18aa7cbd1a38da7f3e877db2d6bfb5026129f9
