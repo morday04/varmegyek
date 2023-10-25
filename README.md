@@ -14,7 +14,7 @@ composer
 ## Clone the project from repository
 
 ```
-git clone https://gitlab.com/laci0071/workshop.git
+git clone https://gitlab.com/laci007/workshop.git
 ```
 
 ## Change to the project directory
