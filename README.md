@@ -21,6 +21,8 @@ git clone https://gitlab.com/laci007/workshop.git
 
 ```
 cd workshop
+
+php artisan key:generate
 ```
 
 ## Do the following settings in .env file:
