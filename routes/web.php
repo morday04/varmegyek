@@ -21,10 +21,10 @@ Route::get('/', function () {
     return view('home',);
 })->name('home');
 
-Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('models', [ModelController::class, 'index'])->name('models');
+//Route::get('models', [ModelController::class, 'index'])->name('models');
+
 Route::get('fuels', [FuelController::class, 'index'])->name('fuels');
 Route::post('fuel', [FuelController::class, 'save'])->name('saveFuel');
 Route::get('fuel/create', [FuelController::class, 'create'])->name('createFuel');

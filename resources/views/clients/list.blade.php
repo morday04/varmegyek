@@ -46,6 +46,10 @@
                                 <tr>
                                     <td id="{{ $entity->id }}">{{$entity->id}}</td>
                                     <td>{{$entity->name}}</td>
+                                    <td>{{$entity->email}}</td>
+                                    <td>{{$entity->phone_number}}</td>
+                                    <td>{{$entity->address}}</td>
+                                    <td>{{$entity->notes}}</td>
                                     <td style="display: flex">
 
                                         <form method="post" action="{{ route('editClient', $entity->id) }}">
