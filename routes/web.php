@@ -57,6 +57,7 @@ Route::post('manufacturer/{id}', [ManufacturerController::class, 'edit'])->name(
 Route::patch('manufacturer/{id}', [ManufacturerController::class, 'update'])->name('updateManufacturer');
 Route::delete('manufacturer/{id}', [ManufacturerController::class, 'delete'])->name('deleteManufacturer');
 Route::post('manufacturers/search', [ManufacturerController::class, 'search'])->name('searchManufacturers');
+Route::get('/manufacturers/{id}/types', [ManufacturerController::class, 'types'])->name('getTypes');
 
 Route::get('types', [TypeController::class, 'index'])->name('types');
 Route::post('type', [TypeController::class, 'save'])->name('saveType');

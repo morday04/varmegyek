@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manufacturer;
+use App\Models\Type;
 
 class ManufacturerController extends Controller
 {
@@ -90,5 +91,17 @@ class ManufacturerController extends Controller
             return '';
         }
         return "/logos/" . $entity->logo;
+    }
+
+    public function types($idManufacturer)
+    {
+        // Fetch Types by Manufacturer id
+        $data['data'] = Type::orderby("name")
+            ->select('id','name')
+            ->where('id_manufacturer', $idManufacturer)
+            ->get();
+        $data['logo'] = $this->getLogo($idManufacturer);
+
+        return response()->json($data);
     }
 }
