@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('home',);
 })->name('home');
 
+//Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-//Route::get('models', [ModelController::class, 'index'])->name('models');
 
 Route::get('fuels', [FuelController::class, 'index'])->name('fuels');
 Route::post('fuel', [FuelController::class, 'save'])->name('saveFuel');
@@ -48,7 +48,6 @@ Route::post('client/{id}', [ClientController::class, 'edit'])->name('editClient'
 Route::patch('client/{id}', [ClientController::class, 'update'])->name('updateClient');
 Route::delete('client/{id}', [ClientController::class, 'delete'])->name('deleteClient');
 Route::post('clients/search', [ClientController::class, 'search'])->name('searchClients');
-
 
 Route::get('manufacturers', [ManufacturerController::class, 'index'])->name('manufacturers');
 Route::post('manufacturer', [ManufacturerController::class, 'save'])->name('saveManufacturer');

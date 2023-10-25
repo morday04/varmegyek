@@ -1,21 +1,30 @@
 # workshop
 
-1. Install the composer then check if composer is properly installed:
+## Install the composer then check if composer is properly installed:
+
 ```
-> c:
-> composer
+c:
+composer
 ```
-2. Start xampp
-3. Open cmd in c:\xampp\htdocs
-4. Clone the project from repository
+
+## Start xampp
+
+## Open cmd in c:\xampp\htdocs
+
+## Clone the project from repository
+
 ```
 git clone https://gitlab.com/laci0071/workshop.git
 ```
-5. Change to the project directory
+
+## Change to the project directory
+
 ```
-> cd workshop
+cd workshop
 ```
-6. Do the following settings in .env file:
+
+## Do the following settings in .env file:
+
 ```
 APP_NAME=Workshop
 APP_ENV=local
@@ -32,7 +41,19 @@ DB_PASSWORD=
 
 LOGOS_PATH="/logos/"
 ```
-5. Create ‘workshop’ database using phpMyAdmin OR from command line:
+
+## Run the following commands:
+
+```
+composer install
+composer require laravel/ui
+php artisan ui bootstrap --auth
+npm install
+npm run build
+```
+
+## Create ‘workshop’ database using phpMyAdmin OR from command line:
+
 ```
 > mysql -u root -p
 $ MariaDB [(none)]> create database workshop;
@@ -40,36 +61,49 @@ $ MariaDB [(none)]> use workshop
 Database changed
 MariaDB [workshop]>exit
 ```
+
 OR
 
-drop database
+### drop database
+
 ```
 > php artisan mysql:dropdb database_name
 ```
-create database
+
+### create database
+
 ```
 > php artisan mysql:createdb database_name
 ```
 
+## Write this command in cmd
 
-6. Write this command in cmd
 ```
 php artisan migrate:install
 ```
 Laravel creates a migrations table in your database to keep track of what migrations have already been ran on your database.
 
 
-7. Write this artisan command in cmd to run all of your outstanding migrations
+## Write this artisan command in cmd to run all of your outstanding migrations
+
 ```
-php artisan migrate"
+php artisan migrate
 ```
 
-8. Write this command in cmd to run application on the PHP development server.
+## Initiate database with seeds
+
+```
+php artisan db:seed
+```
+
+## Write this command in cmd to run application on the PHP development server.
+
 ```
 php artisan serve
 ```
 
-9. To run your application in browser write this line on your browser search bar.
+## To run your application in browser write this line on your browser search bar.
+
 ```
 localhost:8000
 ```

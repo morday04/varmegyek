@@ -12,11 +12,12 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="module" src="{{ asset('js/bootstrap.js') }}"></script>
-    <script type="module" src="{{ asset('js/vue.global.js') }}"></script>
-    <script type="module" src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/workshop.js') }}"></script>
+    <!--<script type="module" src="{{ asset('js/bootstrap.js') }}"></script>-->
+    <!--<script type="module" src="{{ asset('js/vue.global.js') }}"></script>-->
+    <!--<script type="module" src="{{ asset('js/app.js') }}"></script>-->
+    <script src="{{ asset('build/assets/app-c75e0372.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <!--<script src="{{ asset('js/workshop.js') }}"></script>-->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,7 +25,8 @@
 
     <!-- Styles -->
     <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
-    <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+    <!--<link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">-->
+    <link href="{{ asset('build/assets/app-041e359a.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/workshop.css') }}" type="text/css" rel="stylesheet">
     <style type="text/css">
         i{
@@ -48,24 +50,18 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <!-- Left Side Of Navbar -->
-                            <div class="dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <!--<div class="dropdown">-->
+<!--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Törzsadatok
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{route('fuels')}}">Üzemanyagok</a></li>
-                                    <li><a class="dropdown-item" href="{{route('cassises')}}">Karoszériák</a></li>
-                                    <li><a class="dropdown-item" href="{{route('clients')}}">Kliensek</a></li>
-                                    <li><a class="dropdown-item" href="{{route('manufacturers')}}">Gyártók</a></li>
-                                    <li><a class="dropdown-item" href="{{route('types')}}">Típusok</a></li>
-                                </ul>
-                                
-                                    
-                                
-                                
-                                    
-                                
-    </div>
+                                </a>-->
+                                <!--<ul class="navbar">-->
+                                    <li><a href="{{route('fuels')}}">Üzemanyagok</a></li>&nbsp;
+                                    <li><a href="{{route('cassises')}}">Karoszériák</a></li>&nbsp;
+                                    <li><a href="{{route('clients')}}">Kliensek</a></li>&nbsp;
+                                    <li><a href="{{route('manufacturers')}}">Gyártók</a></li>&nbsp;
+                                    <li><a href="{{route('types')}}">Típusok</a></li>&nbsp;
+                                <!--</ul>-->
+                            <!--</div>-->
                        </ul>
 
                         <!-- Right Side Of Navbar -->
