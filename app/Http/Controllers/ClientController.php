@@ -62,7 +62,7 @@ class ClientController extends Controller
         $entity->name = $request->get('name');
         $entity->name = $request->get('email');
         $entity->name = $request->get('phone_number');
-        $entity->name = $request->get('adress');
+        $entity->name = $request->get('address');
         $entity->name = $request->get('notes');
 
         return $entity;
