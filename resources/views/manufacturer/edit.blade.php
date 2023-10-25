@@ -27,8 +27,8 @@
                                                 <label for="name"><strong>Név</strong></label>
                                                 <input type="text" name="name" value="{{ $entity->name }}" required></div>
                                                 <label for="name"><strong>Logó</strong></label>
-                                                <input type="file" name="logo" value="{{ $entity->logo }}" required></div>
-                                                
+                                                <input type="file" name="logo" value="{{ $entity->logo }}"></div>
+
                                         </div>
                                     </div>
                                 </div>

@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <form method="post" action="{{ route('fuel') }}" accept-charset="UTF-8">
+                    <form method="post" action="{{ route('saveFuel') }}" accept-charset="UTF-8">
                         @csrf
                         <div class="card-header">{{ __('Új üzemanyag') }}</div>
                         <div class="card-body">

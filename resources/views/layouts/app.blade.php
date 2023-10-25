@@ -57,7 +57,7 @@
                                 <!--<ul class="navbar">-->
                                     <li><a href="{{route('fuels')}}">Üzemanyagok</a></li>&nbsp;
                                     <li><a href="{{route('cassises')}}">Karoszériák</a></li>&nbsp;
-                                    <li><a href="{{route('clients')}}">Kliensek</a></li>&nbsp;
+                                    <li><a href="{{route('clients')}}">Ügyfelek</a></li>&nbsp;
                                     <li><a href="{{route('manufacturers')}}">Gyártók</a></li>&nbsp;
                                     <li><a href="{{route('types')}}">Típusok</a></li>&nbsp;
                                 <!--</ul>-->

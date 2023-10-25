@@ -6,11 +6,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <form method="post" action="{{ route('model') }}" accept-charset="UTF-8">
+                    <form method="post" action="{{ route('saveType') }}" accept-charset="UTF-8">
                         @csrf
                         <div class="card-header">
                             <div class="row">
-                                <div class="col-6"><strong>{{ __(sprintf("Új %s model", $manufacturer->name)) }}</strong></div>
+                                <div class="col-6"><strong>{{ __(sprintf("Új %s típus", $manufacturer->name)) }}</strong></div>
                                 <div class="col-6 flex logo">
                                     @if(! empty($logo))
                                         <img id="logo" src="{{$logo}}" alt="logo">
@@ -46,7 +46,7 @@
                                 <button type="submit" class="btn"><i class="fa fa-save"></i>&nbsp;{{__('Mentés')}}</button>
                             </div>
                             <div class="col-auto">
-                                <a class="btn" href="{{ route('getModelsFilter', ['id_manufacturer' => $manufacturer->id]) }}"><i class="fa fa-ban"></i>&nbsp;{{__('Mégse')}}</a>
+                                <a class="btn" href="{{ route('getTypesFilter', ['id_manufacturer' => $manufacturer->id]) }}"><i class="fa fa-ban"></i>&nbsp;{{__('Mégse')}}</a>
                             </div>
                         </div>
                     </form>

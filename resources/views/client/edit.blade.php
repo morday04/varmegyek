@@ -25,15 +25,25 @@
                                         <div class="row" style="margin-left: 15px;">
                                             <div class="row">
                                                 <label for="name"><strong>Név</strong></label>
-                                                <input type="text" name="name" value="{{ $entity->name }}" required></div>
+                                                <input type="text" name="name" value="{{ $entity->name }}" required>
+                                            </div>
+                                            <div class="row">
                                                 <label for="email"><strong>Email</strong></label>
-                                                <input type="email" name="email" value="{{ $entity->email }}" required></div>
+                                                <input type="email" name="email" value="{{ $entity->email }}" required>
+                                            </div>
+
+                                            <div class="row">
                                                 <label for="phone_number"><strong>Telefonszám</strong></label>
-                                                <input type="text" name="phone_number" value="{{ $entity->phone_number }}" required></div>
+                                                <input type="text" name="phone_number" value="{{ $entity->phone_number }}" required>
+                                            </div>
+                                            <div class="row">
                                                 <label for="address"><strong>Cím</strong></label>
-                                                <input type="text" name="address" value="{{ $entity->address }}" required></div>
+                                                <input type="text" name="address" value="{{ $entity->address }}" required>
+                                            </div>
+                                            <div class="row">
                                                 <label for="notes"><strong>Megjegyzés</strong></label>
-                                                <input type="notes" name="notes" value="{{ $entity->notes }}" required></div>
+                                                <input type="notes" name="notes" value="{{ $entity->notes }}" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

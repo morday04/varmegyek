@@ -64,3 +64,5 @@ Route::post('type/{id}', [TypeController::class, 'edit'])->name('editType');
 Route::patch('type/{id}', [TypeController::class, 'update'])->name('updateType');
 Route::delete('type/{id}', [TypeController::class, 'delete'])->name('deleteType');
 Route::post('types/search', [TypeController::class, 'search'])->name('searchTypes');
+Route::post('/types/filter', [TypeController::class, 'filter'])->name('postTypesFilter');
+Route::get('/types/filter', [TypeController::class, 'filter'])->name('getTypesFilter');

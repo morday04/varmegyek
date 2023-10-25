@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <form method="post" action="/models/filter" accept-charset="UTF-8">
+                    <form method="post" action="/types/filter" accept-charset="UTF-8">
                         @csrf
                         <div class="container-fluid">
                             <div class="row" style="margin-top: 5px; margin-left:5px">
@@ -17,7 +17,7 @@
                                             <option value="{{$manufacturer->id}}" {{($manufacturer->id == $idManufacturer ? 'selected' : '')}}>{{$manufacturer->name}}</option>
                                         @endforeach
                                     </select>
-                                    <button class="btn" type="submit"><i class="fa fa-filter"></i></button>
+                                    <button class="btn" type="submit"><i class="fa fa-filter"></i>OK</button>
                                 </div>
                                 <div class="col-6 logo">
                                     @if(! empty($logo))
@@ -31,13 +31,13 @@
                     </form>
                     <div class="card-header">
                         <div style="display: inline-block; float:left">
-                            <strong>{{ __('Modellek') }}</strong>
+                            <strong>{{ __('Autó típusok') }}</strong>
                         </div>
                         <div style="display: inline-block; float:right">
-                            <form method="post" action="{{route('searchModels')}}" accept-charset="UTF-8">
+                            <form method="post" action="{{route('searchTypes')}}" accept-charset="UTF-8">
                                 @csrf
                                 <input type="hidden" name="id_manufacturer" value="{{$idManufacturer}}">
-                                <input type="text" name="needle" placeholder="Keresés"><button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                                <input type="text" name="needle" placeholder="Keresés"><button class="btn" type="submit"><i class="fa fa-search"></i>Keres</button>
                             </form>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                         <th>#</th>
                                         <th class="search-field">Megnevezés</th>
                                         <th>Művelet&nbsp;
-                                            <a href="/model/create?id_manufacturer={{$idManufacturer}}"><i class="fa fa-plus"></i></a>
+                                            <a href="/type/create?id_manufacturer={{$idManufacturer}}"><i class="fa fa-plus"></i>+</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -65,10 +65,10 @@
                                         <td id="{{ $entity->id }}">{{$entity->id}}</td>
                                         <td>{{$entity->name}}</td>
                                         <td style="display: flex">
-                                            <form method="post" action="{{ route('editModel', $entity->id) }}"><button class="btn btn-sm" type="submit"><i class="fa fa-edit"></i></button>
+                                            <form method="post" action="{{ route('editType', $entity->id) }}"><button class="btn btn-sm" type="submit"><i class="fa fa-edit"></i>Módosít</button>
                                                 @csrf
                                             </form>
-                                            <form method="post" action="{{ route('deleteModel', $entity->id) }}"><button class="btn btn-sm" type="submit"><i class="fa fa-trash"></i></button>
+                                            <form method="post" action="{{ route('deleteType', $entity->id) }}"><button class="btn btn-sm" type="submit"><i class="fa fa-trash"></i>Töröl</button>
                                                 @csrf
                                                 @method('delete')
                                             </form>
