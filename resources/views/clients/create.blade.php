@@ -22,7 +22,7 @@
                                             <div class="row"><label for="name"><strong>Név</strong></label><input type="text" name="name" required></div>
                                             <div class="row"><label for="email"><strong>Email</strong></label><input type="email" name="email" required></div>
                                             <div class="row"><label for="phone_number"><strong>Telefonszám</strong></label><input type="text" name="phone_number" required></div>
-                                            <div class="row"><label for="adress"><strong>Cím</strong></label><input type="text" name="adress" required></div>
+                                            <div class="row"><label for="address"><strong>Cím</strong></label><input type="text" name="address" required></div>
                                             <div class="row"><label for="notes"><strong>Megjegyzés</strong></label><input type="text" name="notes" required></div>
                                         </div>
                                     </div>

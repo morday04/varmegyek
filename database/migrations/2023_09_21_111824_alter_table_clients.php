@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->boolean('notify')->default(true);
             $table->string('phone_number');
-            $table->string('adress')->nullable();
+            $table->string('address')->nullable();
             $table->boolean('is_company')->default(false);
             $table->text('notes')->nullable();
           
@@ -37,7 +37,7 @@ return new class extends Migration
             $table->dropColumn('email');
             $table->dropColumn('notify');
             $table->dropColumn('phone_number');
-            $table->dropColumn('adress');
+            $table->dropColumn('address');
             $table->dropColumn('is_company');
             $table->dropColumn('notes');
         });
