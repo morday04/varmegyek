@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: inline-block; float:left">
-                            <strong>{{ __('Karosszéria') }}</strong>
+                            <strong>{{ __('Ügyfelek') }}</strong>
                         </div>
                         <div style="display: inline-block; float:right">
                                <form method="post" action="{{route('searchClients')}}" accept-charset="UTF-8">
@@ -46,6 +46,10 @@
                                 <tr>
                                     <td id="{{ $entity->id }}">{{$entity->id}}</td>
                                     <td>{{$entity->name}}</td>
+                                    <td>{{$entity->email}}</td>
+                                    <td>{{$entity->phone_number}}</td>
+                                    <td>{{$entity->address}}</td>
+                                    <td>{{$entity->notes}}</td>
                                     <td style="display: flex">
 
                                         <form method="post" action="{{ route('editClient', $entity->id) }}">

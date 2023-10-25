@@ -37,7 +37,7 @@
                                 <button type="submit" class="btn"><i class="fa fa-save"></i>&nbsp;{{__('Mentés')}}</button>
                             </div>
                             <div class="col-auto">
-                                <a class="btn" href="{{ route('cassiss') }}#{{$entity->id}}"><i class="fa fa-ban"></i>&nbsp;{{__('Mégse')}}</a>
+                                <a class="btn" href="{{ route('cassises') }}#{{$entity->id}}"><i class="fa fa-ban"></i>&nbsp;{{__('Mégse')}}</a>
                             </div>
                         </div>
                     </form>

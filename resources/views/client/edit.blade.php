@@ -30,8 +30,8 @@
                                                 <input type="email" name="email" value="{{ $entity->email }}" required></div>
                                                 <label for="phone_number"><strong>Telefonszám</strong></label>
                                                 <input type="text" name="phone_number" value="{{ $entity->phone_number }}" required></div>
-                                                <label for="adress"><strong>Cím</strong></label>
-                                                <input type="text" name="adress" value="{{ $entity->adress }}" required></div>
+                                                <label for="address"><strong>Cím</strong></label>
+                                                <input type="text" name="address" value="{{ $entity->address }}" required></div>
                                                 <label for="notes"><strong>Megjegyzés</strong></label>
                                                 <input type="notes" name="notes" value="{{ $entity->notes }}" required></div>
                                         </div>
