@@ -6,12 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    const TABLE_NAME = 'fuels';
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('fuels', function (Blueprint $table) {
+        Schema::dropIfExists(self::TABLE_NAME);
+
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fuels');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };

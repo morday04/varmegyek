@@ -6,12 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    const TABLE_NAME = 'cassis';
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('cassis', function (Blueprint $table) {
+        Schema::dropIfExists(self::TABLE_NAME);
+
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cassis');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };
