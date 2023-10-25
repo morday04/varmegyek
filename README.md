@@ -1,5 +1,35 @@
 # workshop
+1. start the cmd and xampp
+2.Install the composer then check if composer is properly installed:
 
+> c:
+> composer
+
+3. step, that running the "git clone https://gitlab.com/laci0071/workshop.git" command
+4.Create ‘workshop’ database using phpMyAdmin or from command line:
+
+> mysql -u root -p
+$ MariaDB [(none)]> create database workshop;
+$ MariaDB [(none)]> use workshop
+Database changed
+MariaDB [workshop]>exit
+
+OR
+drop database
+> php artisan mysql:dropdb database_name 
+create database
+> php artisan mysql:createdb database_name
+    
+
+5.write this command "php artisan migrate:install" in cmd
+Laravel creates a migrations table in your database to keep track of what migrations have already been ran on your database. If you run php artisan migrate:install, this table is created.
+
+6.write this command "php artisan migrate" in cmd
+To run all of your outstanding migrations, execute the migrate Artisan command
+
+7.write this command "php artisan serve" in cmd: helps running applications on the PHP development server
+
+8.write this line "localhost:8000" on your browser search bar
 
 
 ## Getting started
