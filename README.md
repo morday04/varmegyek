@@ -55,7 +55,7 @@ npm run build
 ## Create ‘workshop’ database using phpMyAdmin OR from command line:
 
 ```
-> mysql -u root -p
+mysql -u root -p
 $ MariaDB [(none)]> create database workshop;
 $ MariaDB [(none)]> use workshop
 Database changed
@@ -67,13 +67,13 @@ OR
 ### drop database
 
 ```
-> php artisan mysql:dropdb database_name
+php artisan mysql:dropdb database_name
 ```
 
 ### create database
 
 ```
-> php artisan mysql:createdb database_name
+php artisan mysql:createdb database_name
 ```
 
 ## Write this command in cmd
