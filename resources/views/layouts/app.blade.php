@@ -60,6 +60,8 @@
                                     <li><a href="{{route('clients')}}">Ügyfelek</a></li>&nbsp;
                                     <li><a href="{{route('manufacturers')}}">Gyártók</a></li>&nbsp;
                                     <li><a href="{{route('types')}}">Típusok</a></li>&nbsp;
+                                    <li><a href="{{route('vehicles')}}">Járművek</a></li>&nbsp;
+
                                 <!--</ul>-->
                             <!--</div>-->
                        </ul>

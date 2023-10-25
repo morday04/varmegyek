@@ -7,6 +7,7 @@ use App\Http\Controllers\CassisController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\VehicleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,3 +67,12 @@ Route::delete('type/{id}', [TypeController::class, 'delete'])->name('deleteType'
 Route::post('types/search', [TypeController::class, 'search'])->name('searchTypes');
 Route::post('/types/filter', [TypeController::class, 'filter'])->name('postTypesFilter');
 Route::get('/types/filter', [TypeController::class, 'filter'])->name('getTypesFilter');
+
+Route::get('vehicles', [VehicleController::class, 'index'])->name('vehicles');
+Route::post('vehicle', [VehicleController::class, 'save'])->name('vehicle');
+Route::get('vehicle/create', [VehicleController::class, 'create'])->name('createVehicle');
+Route::post('vehicle/{id}', [VehicleController::class, 'edit'])->name('editVehicle');
+Route::patch('vehicle/{id}', [VehicleController::class, 'update'])->name('updateVehicle');
+Route::delete('vehicle/{id}', [VehicleController::class, 'delete'])->name('deleteVehicle');
+Route::post('vehicles/search', [VehicleController::class, 'search'])->name('searchVehicles');
+Route::get('/vehicles/{id}', [VehicleController::class, 'filter'])->name('vehiclesFilter');
