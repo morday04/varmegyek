@@ -60,10 +60,10 @@ class ClientController extends Controller
     private function setEntityData(Client $entity, Request $request): ?Client
     {
         $entity->name = $request->get('name');
-        $entity->name = $request->get('email');
-        $entity->name = $request->get('phone_number');
-        $entity->name = $request->get('adress');
-        $entity->name = $request->get('notes');
+        $entity->email = $request->get('email');
+        $entity->phone_number = $request->get('phone_number');
+        $entity->address = $request->get('address');
+        $entity->notes = $request->get('notes');
 
         return $entity;
     }
