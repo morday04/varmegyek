@@ -64,7 +64,6 @@ class ClientController extends Controller
         $entity->phone_number = $request->get('phone_number');
         $entity->address = $request->get('address');
         $entity->notes = $request->get('notes');
-
         return $entity;
     }
 
