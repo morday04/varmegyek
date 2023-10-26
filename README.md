@@ -21,7 +21,12 @@ git clone https://gitlab.com/laci007/workshop.git
 
 ```
 cd workshop
+```
+## Create .env file based on .env.example
 
+## Run the following command:
+
+```
 php artisan key:generate
 ```
 
@@ -48,7 +53,6 @@ LOGOS_PATH="/logos/"
 
 ```
 composer install
-php artisan ui bootstrap --auth
 npm install
 npm run build
 ```
