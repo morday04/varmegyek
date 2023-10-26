@@ -48,7 +48,6 @@ LOGOS_PATH="/logos/"
 
 ```
 composer install
-composer require laravel/ui
 php artisan ui bootstrap --auth
 npm install
 npm run build
