@@ -53,13 +53,20 @@
                                     <td style="display: flex">
 
                                         <form method="post" action="{{ route('editClient', $entity->id) }}">
-                                            <button class="btn btn-sm" type="submit"><i class="fa fa-edit">Módosít</i></button>
-                                           @csrf
+                                            <button class="btn btn-sm" type="submit"><i class="fa fa-edit"></i>Módosít</button>
+                                            @csrf
                                         </form>
-                                        <form method="post" action="{{ route('deleteClient', $entity->id) }}"><button class="btn btn-sm" type="submit"><i class="fa fa-trash">Töröl</i></button>
+                                        <form method="post" action="{{ route('deleteClient', $entity->id) }}">
+                                            <button class="btn btn-sm" type="submit"><i class="fa fa-trash"></i>Töröl</button>
                                             @csrf
                                             @method('delete')
                                         </form>
+                                        <!--@if ($entity->notify && $entity->email)-->
+                                            <form method="post" action="{{ route('sendValidUntilMail', $entity->id) }}">
+                                                <button class="btn btn-sm" type="submit"><i class="fa fa-envelope"></i>Email</button>
+                                                @csrf
+                                            </form>
+                                        <!--@endif-->
 
                                     </td>
                                 </tr>

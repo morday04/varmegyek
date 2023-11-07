@@ -49,6 +49,8 @@ Route::post('client/{id}', [ClientController::class, 'edit'])->name('editClient'
 Route::patch('client/{id}', [ClientController::class, 'update'])->name('updateClient');
 Route::delete('client/{id}', [ClientController::class, 'delete'])->name('deleteClient');
 Route::post('clients/search', [ClientController::class, 'search'])->name('searchClients');
+Route::post('clients/{id}/send-valid-until-mail', [ClientController::class, 'sendValidUntilMail'])->name('sendValidUntilMail');
+
 
 Route::get('manufacturers', [ManufacturerController::class, 'index'])->name('manufacturers');
 Route::post('manufacturer', [ManufacturerController::class, 'save'])->name('saveManufacturer');

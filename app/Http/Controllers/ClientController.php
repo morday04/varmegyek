@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ValidUntilMail;
 use App\Models\Client;
+use App\Models\Vehicle;
 
 class ClientController extends Controller
 {
@@ -84,5 +87,20 @@ class ClientController extends Controller
         }
 
         return view('client/list', ['entities' => $entities]);
+    }
+
+    public function sendValidUntilMail($id)
+    {
+        $client = Client::find($id);
+        if (!$client) {
+            return view('404');
+        }
+        $vehicle = new Vehicle();
+        $vehicle->registration_plate = 'AA-AA-001';
+        $vehicle->valid_until = '2023-12-01';
+        Mail::to($client->email)
+            ->send(new ValidUntilMail($client, $vehicle));
+
+        return $this->index();
     }
 }
