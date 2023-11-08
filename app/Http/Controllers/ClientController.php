@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ValidUntilMail;
 use App\Models\Client;
 use App\Models\Vehicle;
+use Exception;
 
 class ClientController extends Controller
 {
@@ -95,11 +96,18 @@ class ClientController extends Controller
         if (!$client) {
             return view('404');
         }
+        // Egyelőre nincs kapcsolat az ügyfelek és a járművek között,
+        // ezért egy jármű adatait bedrótoztuk.
         $vehicle = new Vehicle();
         $vehicle->registration_plate = 'AA-AA-001';
         $vehicle->valid_until = '2023-12-01';
-        Mail::to($client->email)
-            ->send(new ValidUntilMail($client, $vehicle));
+        try {
+            Mail::to($client->email)
+                ->send(new ValidUntilMail($client, $vehicle));
+        }
+        catch (Exception $e) {
+            return $e->message;
+        }
 
         return $this->index();
     }
