@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Varmegye;
 
 class ImportCounties extends Command
 {
@@ -22,40 +23,18 @@ class ImportCounties extends Command
      */
     protected $description = 'A megadott .csv fájlból importálja a vármegyéket a megadott adatbázisba';
 
-    /**
-     * Execute the console command.
-     */
-    /**public function handle()
-    {
-        $filename = $this->argument('filename');
-        $databaseName = $this->argument('database') ?? config('database.default');
-
-        if (!Schema::connection($databaseName)->hasTable('varmegye')) {
-            $this->error("Nem létezik a '$databaseName' adatbázis.");
-            return;
-        }
-
-        // Get CSV data
-        $csvData = $this->getCsvData($filename);
-
-        // Insert data into the database
-        $this->insertDataIntoDatabase($csvData, $databaseName);
-
-        $this->info('Counties imported successfully!');
-    }
-
-    private function getCsvData($filename)
-    {
-        return [];
-    }
-
-    */
     public function handle()
     {
         $fileName=$this->argument('fileName');
         $csvData= $this->getCsvData($fileName);
-        var_dump($csvData);
-        return 0;
+        $counties = $this->getCounties($csvData);
+        $this -> turncate($counties);
+        foreach($counties as $county)
+        {
+            Varmegye::create(["name"=>$county]);
+        }
+        //var_dump($counties);
+        //return 0;
     }
 
     private function getCsvData($fileName, $withHeader=true)
@@ -77,28 +56,45 @@ class ImportCounties extends Command
         }
         while(!feof($csvFile))
         {
-            $lines=fgetcsv($csvFile);
-            $lines[] = $lines;
+            $line=fgetcsv($csvFile);
+            $lines[] = $line;
+            //var_dump($lines);
         }
         fclose($csvFile);
 
         return $lines;
     }
-    /**private function insertDataIntoDatabase($data, $databaseName)
-    {
-        foreach ($data as $row) {
-            $firstElement = explode(',', $row)[0];
-    
-            $existingRecord = DB::connection($databaseName)
-                ->table('varmegye')
-                ->where('name', $firstElement)  
-                ->first();
-    
-            if (!$existingRecord) {
-                DB::connection($databaseName)->table('varmegye')->insert(['name' => $firstElement]);
+
+    private function getCounties($csvData)
+    {  
+        $county="";
+        $result=[];
+        foreach($csvData as $data)
+        {
+            if(!is_array($data))
+            {
+                continue;
+            }
+            if($data[0]!=$county)
+            {
+                $result[]=$data[0];
+                $county=$data[0];
             }
         }
-    }*/
+        return $result;
+    }
+    private function turncate ($table)
+    {
+        try
+        {
+            DB::statement("TURNCATE TABLE $table;");
+            $this->info("$table table has been turncated.");
+        }
+        catch(Exeption $e)
+        {
+            $this->error($e->getMessage());
+        }
+    }
 }
 
     

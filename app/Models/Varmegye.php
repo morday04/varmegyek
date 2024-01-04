@@ -9,4 +9,5 @@ class Varmegye extends Model
 {
     protected $table = 'varmegye';
     use HasFactory;
+    protected $fillable = ["name"];
 }

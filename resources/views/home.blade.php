@@ -24,6 +24,12 @@
         .card-body {
             padding: 20px;
         }
+        .card-body img {
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 0 auto; 
+        }
     </style>
 
     <div class="container">
@@ -36,6 +42,7 @@
 
                     <div class="card-body">
                         {{-- Tartalom --}}
+                        <img src="jh.jpg" alt="Aint no way">
                     </div>
                 </div>
             </div>

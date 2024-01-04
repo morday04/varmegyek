@@ -23,38 +23,33 @@
         }
 
         .search-container {
-            display: inline-block;
-            float: right;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px; 
         }
 
         .search-container form {
-            margin-bottom: 0;
+            display: flex;
+            width: 90%;
+            margin: 0; 
         }
 
         .search-container input {
+            flex: 1;
             padding: 8px;
-            border: 1px solid #aebfd1; 
+            border: 1px solid #aebfd1;
             border-radius: 4px;
             margin-right: 5px;
         }
 
         .search-container button {
             padding: 8px 15px;
-            background-color: #007BFF; 
+            background-color: #007BFF;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-        }
-
-        .table th, .table td {
-            text-align: center;
-            vertical-align: middle; 
-        }
-
-        .action-btns button {
-            width: 100%; 
-            margin-bottom: 5px;
+            margin-left: 35px;
         }
 
         
@@ -84,13 +79,7 @@
                             </div>
                         @endif
 
-                        <div class="search-container">
-                            <form method="post" action="{{ route('searchVarmegyek') }}" accept-charset="UTF-8">
-                                @csrf
-                                <input type="text" name="needle" placeholder="{{ __('Keresés') }}">
-                                <button class="btn" type="submit"><i class="fa fa-search"></i>{{ __('Keres') }}</button>
-                            </form>
-                        </div>
+                        
 
                         <table class="table table-striped">
                             <thead class="thead-light">
@@ -105,12 +94,43 @@
                             </thead>
 
                             <tbody>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="search-container">
+                                            <form method="post" action="{{ route('searchVarmegyek') }}" accept-charset="UTF-8">
+                                                @csrf
+                                                <input type="text" name="needle" placeholder="{{ __('Keresés') }}">
+                                                <button class="btn" type="submit"><i class="fa fa-search"></i>{{ __('Keres') }}</button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    
+                                </tr>
+                                <tr id="editor" style="display:none">
+                                    <form method="post" action="{{ route('saveVarmegye') }}" accept-charset="UTF-8">
+                                        <td colspan="3">
+                                            <div class="row">
+                                                <div class="col-md-1">
+                                                    <input type="hidden" name="id" id="id" value="">
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <input type="search" name="name" id="edit-box" value="" required class="form-control">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;{{__('Mentés')}}</button>
+                                                    <a class="btn btn-secondary" href="{{ route('varmegyek') }}" style="background-color: #6c757d; border: none;"><i class="fa fa-ban"></i>&nbsp;{{__('Mégse')}}</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </form>
+                                </tr>
                                 @foreach($entities as $entity)
                                     <tr>
                                         <td id="{{ $entity->id }}">{{ $entity->id }}</td>
                                         <td>{{ $entity->name }}</td>
                                         <td class="action-btns">
                                             <form method="post" action="{{ route('editVarmegye', $entity->id) }}">
+                                                
                                                 <button class="btn btn-sm btn-info" type="submit"><i class="fa fa-edit"></i> {{ __('Módosít') }}</button>
                                                 @csrf
                                             </form>

@@ -20,7 +20,6 @@ Route::get('/', function () {
 //Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 Route::get('varmegyek', [VarmegyeController::class, 'index'])->name('varmegyek');
 Route::post('varmegye', [VarmegyeController::class, 'save'])->name('saveVarmegye');
 Route::get('varmegye/create', [VarmegyeController::class, 'create'])->name('createVarmegye');
